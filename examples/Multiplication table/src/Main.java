@@ -2,21 +2,16 @@
 public class Main {
 
 	public static void main(String[] args) {
-		
-		callNineNine();
-	}
-
-	private static void callNineNine() {
 		for (int i = 1; i < 10; i++) {
 			System.out.print("   "+i);
 		}
 		System.out.println();
 		
-		//ª½±Æ
+		//ç›´æŽ’
 		for (int i = 1; i < 10; i++) {
 			System.out.print(i);
 			
-			//¾î±Æ
+			//æ©«æŽ’
 			for (int j = 1; j < 10; j++) {
 				if (j == 1) {
 					System.out.print("  ");
