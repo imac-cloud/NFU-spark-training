@@ -1,4 +1,4 @@
-﻿## Hive
+## Hive
 
 此範例為透過 SparkSQL 跟 Hive 連結，並載入外部資料來建立資料表
 
@@ -12,7 +12,7 @@ Justin 19
 ###將資料載入 hdfs 語法
 
 ```sh
-hadoop fs -put 本地端路徑 hdfs路徑
+hadoop fs -put 本地端路徑 hdfs 路徑
 ```
 
 ###利用 Spark-Submit 去執行
