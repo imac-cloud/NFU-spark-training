@@ -4,4 +4,4 @@
 
 ###結果圖
 
-![GITHUB](../images/multiplication table.png)
+![GITHUB](../../images/multiplication table.png)
