@@ -6,7 +6,7 @@ sc <- sparkR.init(appName="SparkR-DataFrame-example")
 sqlContext <- sparkRSQL.init(sc)
 
 # 因為載入 CSV 後可能會沒有資料表欄位，需要先設定 CSV 資料載入後的欄位格式及名稱
-csvSchema <- structType(structField("name", "string"), structField("age", "integer"))
+csvSchema <- structType(structField("name", "string"), structField("age", "string"))
 
 # 可透過 read.df API 將本地端 CSV 資料讀取後轉換成 SparkSQL DataFrame
 peopleDF2 <- read.df(sqlContext, "file:///opt/spark/examples/src/main/resources/people.txt", source = "com.databricks.spark.csv", head="true", schema = csvSchema)

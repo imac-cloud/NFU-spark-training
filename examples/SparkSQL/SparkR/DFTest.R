@@ -23,7 +23,7 @@ printSchema(df)
 registerTempTable(df, "people")
 
 # 藉由 sqlContext 可以使用 SQL 語法來做關聯式查詢
-adults <- sql(sqlContext, "SELECT name FROM people age >= 19")
+adults <- sql(sqlContext, "SELECT name FROM people WHERE age >= 19")
 
 # Call collect to get a local data.frame
 # 利用 collect 去取得轉換二維資料表為 data.frame 格式的結果
