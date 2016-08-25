@@ -9,7 +9,7 @@ sqlContext <- sparkRSQL.init(sc)
 csvSchema <- structType(structField("name", "string"), structField("age", "string"))
 
 # 可透過 read.df API 將本地端 CSV 資料讀取後轉換成 SparkSQL DataFrame
-peopleDF2 <- read.df(sqlContext, "file:///opt/spark/examples/src/main/resources/people.txt", source = "com.databricks.spark.csv", head="true", schema = csvSchema)
+peopleDF2 <- read.df(sqlContext, "file:///opt/spark/examples/src/main/resources/people.txt", source = "com.databricks.spark.csv", head="false", schema = csvSchema)
 
 #印出 SparkSQL DataFrame API 的資料格式
 print(peopleDF2)
