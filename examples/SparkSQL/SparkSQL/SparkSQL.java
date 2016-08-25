@@ -16,7 +16,6 @@ public class SparkSQL {
 	    //將外部 JSON 轉換成 DateFrame 資料表
 	    DataFrame drinks = sqlContext.read().json(args[0]);
 	    
-	    drinks.printSchema();
 	    //查看資料表內容
 	    drinks.show();
 	    
