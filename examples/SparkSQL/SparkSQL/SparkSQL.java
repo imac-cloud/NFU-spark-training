@@ -8,24 +8,24 @@ import org.apache.spark.sql.SQLContext;
 public class SparkSQL {
 
 	public static void main(String[] args) {
-		//spark °ò¥»³]©w
-		SparkConf sc = new SparkConf().setAppName("SparkSQL");
+	    //spark åŸºæœ¬è¨­å®š
+	    SparkConf sc = new SparkConf().setAppName("SparkSQL");
 	    JavaSparkContext ctx = new JavaSparkContext(sc);
 	    SQLContext sqlContext = new SQLContext(ctx);
 	    
-	    //±N¥~³¡ JSON Âà´«¦¨ DateFrame ¸ê®Æªí
+	    //å°‡å¤–éƒ¨ JSON è½‰æ›æˆ DateFrame è³‡æ–™è¡¨
 	    DataFrame drinks = sqlContext.read().json(args[0]);
 	    
 	    drinks.printSchema();
-	    //¬d¬İ¸ê®Æªí¤º®e
+	    //æŸ¥çœ‹è³‡æ–™è¡¨å…§å®¹
 	    drinks.show();
 	    
-	    //¥ÎÃöÁp¦¡»yªk¬d¸ß
+	    //ç”¨é—œè¯å¼èªæ³•æŸ¥è©¢
 	    drinks.registerTempTable("drinks");
 	    DataFrame choices = sqlContext.sql("SELECT juice FROM drinks");
 	    choices.show();
 	    
-	    //¥ÎSparkSQL API §@ÃöÁp¦¡»yªk¬d¸ß
+	    //ç”¨SparkSQL API ä½œé—œè¯å¼èªæ³•æŸ¥è©¢
 	    drinks.select("juice").show();
 	    
 	    
